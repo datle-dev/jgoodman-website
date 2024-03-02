@@ -13,4 +13,9 @@ export default defineConfig({
     integrations: [
         pagefind(),
     ],
+    markdown: {
+        shikiConfig: {
+            theme: 'github-light',
+        },
+    },
 });
