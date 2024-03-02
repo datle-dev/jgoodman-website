@@ -6,7 +6,6 @@ const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
 const pageTitle = "Tags";
 ---
 <BaseLayout pageTitle={pageTitle}>
-  <h1>Tags</h1>
   <ul>
     {
       tags.map((tag) => (

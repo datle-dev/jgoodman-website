@@ -6,7 +6,6 @@ const categories = [...new Set(allPosts.map((post) => post.data.category).flat()
 const pageTitle = "Categories";
 ---
 <BaseLayout pageTitle={pageTitle}>
-  <h1>Categories</h1>
   <ul>
     {
       categories.map((category) => (
