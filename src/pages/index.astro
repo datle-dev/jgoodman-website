@@ -1,16 +1,28 @@
 ---
-
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Buttons from "../components/Buttons.astro";
+import UnderConstruction from "../components/UnderConstruction.astro";
+const pageTitle = "Home";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout pageTitle={pageTitle}>
+	<h1>{pageTitle}</h1>
+	<img src="/jgoodman-website/random/stars.gif" alt="twinkling stars">
+	<img src="/jgoodman-website/random/stars.gif" alt="twinkling stars">
+	<img src="/jgoodman-website/random/stars.gif" alt="twinkling stars">
+	
+	<img src="/jgoodman-website/random/dog.gif" alt="dog">
+	<img src="/jgoodman-website/random/flag.gif" alt="flag">
+	<img src="/jgoodman-website/random/kawaii-thing.gif" alt="kawaii thing">
+	<img src="/jgoodman-website/random/koala-snow-globe.gif" alt="koala snow globe">
+	<img src="/jgoodman-website/random/lightning.gif" alt="lightning">
+
+	<Buttons></Buttons>
+	<UnderConstruction></UnderConstruction>
+	<div>
+		<h2 class="blink-text">Hello world</h2>
+	</div>
+	
+</BaseLayout>
+
+
