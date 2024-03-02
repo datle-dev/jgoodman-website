@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+import { Image } from "astro:assets";
+
+const images = await Astro.glob("/src/assets/*/*");
+const pageTitle = "Photography";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <main>
+    <h1>Photography</h1>
+
+    {images.map((img) => (
+      <div class="gallery-photo">
+        <Image
+          src={img.default}
+          alt=""
+          width="400"
+          style="border: 8px solid white;"
+        />
+      </div>
+      ))
+    }
+
+    <p>
+      Photo by <a href="https://unsplash.com/@girlwithredhat?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Girl with red hat</a> on <a href="https://unsplash.com/photos/black-and-silver-candybar-phone-ma2ur_ld0ko?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+    </p>
+    <p>
+      Photo by <a href="https://unsplash.com/@jenniferhuanng?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">J Huang</a> on <a href="https://unsplash.com/photos/black-and-white-cd-album-Bj62dYbaUw8?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+    </p>
+    <p>
+      Photo by <a href="https://unsplash.com/@benofthenorth?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Ben Griffiths</a> on <a href="https://unsplash.com/photos/black-digital-device-at-4-00-wecpA8RQ_zc?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+    </p>
+    <p>
+      Photo by <a href="https://unsplash.com/@phillshaw?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Phil Shaw</a> on <a href="https://unsplash.com/photos/white-blue-and-red-floral-ceramic-plates-UCQSFVkQOag?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+    </p>
+    <p>
+      Photo by <a href="https://unsplash.com/@girlwithredhat?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Girl with red hat</a> on <a href="https://unsplash.com/photos/red-and-black-plastic-toy-TTVk17o6lgA?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+    </p>
+    <p>
+      Photo by <a href="https://unsplash.com/@anniespratt?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Annie Spratt</a> on <a href="https://unsplash.com/photos/black-instant-camera-on-wooden-surface-Vfem2XDB210?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+    </p>
+
+  </main>
+</BaseLayout>
