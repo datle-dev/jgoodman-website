@@ -88,6 +88,9 @@ bgSelect.addEventListener('change', () => {
         case 'snow-leopard':
             body.style.backgroundImage = "url('/jgoodman-website/tiles/bg-tile-snow-leopard.png')";
             break;
+        case 'none':
+            body.style.backgroundImage = "none";
+            break;
     }
 
 });
