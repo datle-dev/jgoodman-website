@@ -1,5 +1,6 @@
 ---
 import OptionSelect from "./OptionSelect.astro";
+import Search from "astro-pagefind/components/Search";
 ---
 
 <header>
@@ -19,5 +20,6 @@ import OptionSelect from "./OptionSelect.astro";
       <td><a href="/jgoodman-website/photography">Photography</a></td>
     </tr>
   </table>
+  <Search id="search" className="pagefind-ui" uiOptions={{ showImages: false }} />
   <OptionSelect></OptionSelect>
 </header>
