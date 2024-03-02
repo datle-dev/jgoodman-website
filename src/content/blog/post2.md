@@ -1,6 +1,6 @@
 ---
 title: "2nd Post!"
-isDraft: False
+draft: False
 tags: ["hello world", "second post"]
 category: "other testing"
 publishDate: 2024-03-18
