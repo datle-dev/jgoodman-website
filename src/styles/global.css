@@ -1,0 +1,67 @@
+@import url('https://fonts.cdnfonts.com/css/curlz');
+
+body {
+    background-image: url('/jgoodman-website/tiles/bg-tile-paper.png');
+    background-repeat: repeat;
+    height: 100vh;
+}
+
+h1 {
+    font-family: 'Curlz', serif;
+    text-decoration: wavy underline;
+}
+
+.nav,
+.nav th,
+.nav td {
+    border: 1px solid black;
+    font-size: 24px;
+}
+
+table {
+    background-image: '/stars.gif';
+}
+
+.hit-counter {
+    background-color: black;
+    color: lime;
+}
+
+/* .gallery-photo {
+    border: 8px solid white;
+} */
+
+.subtitle {
+    font-weight: bold;
+    font-style: italic;
+    color: red;
+}
+
+.blink-text {
+    display: inline-block;
+    animation:1s blinker linear infinite;
+    -webkit-animation:1s blinker linear infinite;
+    -moz-animation:1s blinker linear infinite;
+    background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@-moz-keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@-webkit-keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+ }
