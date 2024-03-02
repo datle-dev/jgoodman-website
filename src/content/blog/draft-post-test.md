@@ -1,7 +1,7 @@
 ---
 title: "Draft Test Post"
 draft: true
-tags: ["markdown", "typography"]
+tags: ["markdown"]
 category: "test"
 publishDate: 2024-03-01
 ---

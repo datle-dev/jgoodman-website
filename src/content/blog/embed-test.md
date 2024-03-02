@@ -1,9 +1,9 @@
 ---
 title: "Video Embed Test Post"
 draft: False
-tags: ["markdown", "video"]
+tags: ["markdown", "embed"]
 category: "test"
-publishDate: 2024-03-01
+publishDate: 2024-03-02
 ---
 
 Markdown supports HTML embedding.
