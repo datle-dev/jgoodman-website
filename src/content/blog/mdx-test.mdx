@@ -1,0 +1,53 @@
+---
+title: "MDX Test Post"
+draft: False
+tags: ["markdown", "mdx"]
+category: "test"
+publishDate: 2024-03-02
+---
+export const myStr = 'The quick brown fox jumps over the lazy dog'
+import Buttons from '../../components/Buttons.astro'
+
+This is an MDX file, which come with some extra benefits compared to a typical markdown file.
+
+## Frontmatter Variables
+
+You can access the frontmatter variables.
+
+The title of this file is {frontmatter.title}.
+
+This file's tags are:
+<ul>
+{frontmatter.tags.map((tag) =>
+    <li>{tag}</li>
+)}
+</ul>
+
+## Exported Variables
+
+You can create variables and access them,
+or use them when importing this \*.mdx file elsewhere.
+
+### Heading 3: {myStr}
+#### Heading 4: {myStr}
+
+{myStr}
+
+- {myStr}
+    - {myStr}
+
+## Custom Astro Components
+
+You can import custom Astro components.
+
+<Buttons />
+
+## Embeds
+
+Embedding works as usual too.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qHxPjNgleCA?si=JN6Uuxt8AvlxaCuK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Good morning from <a href="https://twitter.com/hashtag/SoxSpring?src=hash&amp;ref_src=twsrc%5Etfw">#SoxSpring</a> ☀️ <a href="https://t.co/Mt4FjNE5AJ">pic.twitter.com/Mt4FjNE5AJ</a></p>&mdash; Red Sox (@RedSox) <a href="https://twitter.com/RedSox/status/1757765710921572665?ref_src=twsrc%5Etfw">February 14, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+
+
