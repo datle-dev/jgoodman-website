@@ -1,0 +1,17 @@
+---
+import { Image } from "astro:assets";
+
+const { imagePath, altText, width } = Astro.props;
+---
+<!-- This link will work with `npm build` + `npm run preview` -->
+<!-- but it won't work in `npm run dev` -->
+<!-- Image will show correctly in either case and will be -->
+<!-- built correctly when shown in the gallery (smaller, optimized) -->
+<!-- or clicked on to open the full size (original size, still optimized) -->
+<a href={imagePath.src}>
+  <Image
+    src={imagePath}
+    alt={altText}
+    width={width}
+  />
+</a>
