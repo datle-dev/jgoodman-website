@@ -11,62 +11,75 @@ import {
 } from "cursor-effects";
 
 let cursorEffect;
+const body = document.querySelector('body');
+const cursorSelect = document.querySelector('#cursor-select');
+const bgSelect = document.querySelector('#bg-select');
 
 window.addEventListener("load", (event) => {
-    cursorEffect = new ghostCursor();
-});
+    // check for previous cursor selection
+    if (localStorage.getItem('cursorSelect')) {
+        setCursorEffect(localStorage.getItem('cursorSelect'));
+    } else {
+        setCursorEffect(cursorSelect.options[0].value)
+    }
 
-const body = document.querySelector('body');
+    if (localStorage.getItem('cursorSelectIndex')) {
+        cursorSelect.options[localStorage.getItem('cursorSelectIndex')].selected = true;
+    } else {
+        cursorSelect.options[0].selected = true;
+    }
 
-const cursorSelect = document.querySelector('#cursor-select');
-let cursorSelectPrev = cursorSelect.value;
+    // check for previous background image selection
+    if (localStorage.getItem('bgSelect')) {
+        setBgImage(localStorage.getItem('bgSelect'));
+    } else {
+        setBgImage(bgSelect.options[0].value)
+    }
 
-const bgSelect = document.querySelector('#bg-select');
-let bgSelectPrev = bgSelect.value;
-
-cursorSelect.addEventListener('change', () => {
-    console.log(`switch to cursor: ${cursorSelect.value}`);
-    if (cursorEffect) {
-        cursorEffect.destroy();
-
-        switch (cursorSelect.value) {
-            case 'ghost':
-                cursorEffect = new ghostCursor();
-                break;
-            case 'rainbow':
-                cursorEffect = new rainbowCursor();
-                break;
-            case 'fairy-dust':
-                cursorEffect = new fairyDustCursor();
-                break;
-            case 'text-flag':
-                cursorEffect = new textFlag({text: "Jgoodz"});
-                break;
-            case 'trailing':
-                cursorEffect = new trailingCursor();
-                break;
-            case 'emoji-elastic':
-                cursorEffect = new springyEmojiCursor({ emoji: ["💀"] });
-                break;
-            case 'emoji-rain':
-                cursorEffect = new emojiCursor({ emoji: ["😂", "🍆", "🤡"] });
-                break;
-            case 'bubbles':
-                cursorEffect = new bubbleCursor();
-                break;
-            case 'snowflakes':
-                cursorEffect = new snowflakeCursor();
-                break;
-            case 'off':
-                break;
-        }
+    if (localStorage.getItem('bgSelectIndex')) {
+        bgSelect.options[localStorage.getItem('bgSelectIndex')].selected = true;
+    } else {
+        bgSelect.options[0].selected = true;
     }
 });
 
-bgSelect.addEventListener('change', () => {
-    console.log(`switch to bg: ${bgSelect.value}`);
 
-    switch (bgSelect.value) {
+function setCursorEffect(effect) {
+    switch (effect) {
+        case 'ghost':
+            cursorEffect = new ghostCursor();
+            break;
+        case 'rainbow':
+            cursorEffect = new rainbowCursor();
+            break;
+        case 'fairy-dust':
+            cursorEffect = new fairyDustCursor();
+            break;
+        case 'text-flag':
+            cursorEffect = new textFlag({text: "Jgoodz"});
+            break;
+        case 'trailing':
+            cursorEffect = new trailingCursor();
+            break;
+        case 'emoji-elastic':
+            cursorEffect = new springyEmojiCursor({ emoji: ["💀"] });
+            break;
+        case 'emoji-rain':
+            cursorEffect = new emojiCursor({ emoji: ["😂", "🍆", "🤡"] });
+            break;
+        case 'bubbles':
+            cursorEffect = new bubbleCursor();
+            break;
+        case 'snowflakes':
+            cursorEffect = new snowflakeCursor();
+            break;
+        case 'off':
+            break;
+    }
+}
+
+function setBgImage(image) {
+    switch (image) {
         case 'paper':
             body.style.backgroundImage = "url('/jgoodman-website/tiles/bg-tile-paper.png')";
             break;
@@ -92,5 +105,19 @@ bgSelect.addEventListener('change', () => {
             body.style.backgroundImage = "none";
             break;
     }
+}
 
+cursorSelect.addEventListener('change', () => {
+    if (cursorEffect) {
+        cursorEffect.destroy();
+        setCursorEffect(cursorSelect.value)
+        localStorage.setItem('cursorSelect', cursorSelect.value);
+        localStorage.setItem('cursorSelectIndex', cursorSelect.options.selectedIndex)
+    }
+});
+
+bgSelect.addEventListener('change', () => {
+    setBgImage(bgSelect.value);
+    localStorage.setItem('bgSelect', bgSelect.value);
+    localStorage.setItem('bgSelectIndex', bgSelect.options.selectedIndex);
 });
