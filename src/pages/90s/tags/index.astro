@@ -1,0 +1,20 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout90s from "../../../layouts/BaseLayout90s.astro";
+const allPosts = await getCollection('blog-90s', ({ data }) => {
+  return import.meta.env.PROD ? data.draft !== true : true;
+});
+const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
+const pageTitle = "Tags";
+---
+<BaseLayout90s pageTitle={pageTitle}>
+  <ul>
+    {
+      tags.map((tag) => (
+        <li>
+          <a href={`/jgoodman-website/90s/tags/${tag}`}># {tag}</a>
+        </li>
+      ))
+    }
+  </ul>
+</BaseLayout90s>
