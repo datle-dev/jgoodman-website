@@ -116,12 +116,16 @@ function setBgImage(image) {
 }
 
 cursorSelect.addEventListener('change', () => {
+    console.log(`cursor: ${cursorSelect.value} at index ${cursorSelect.options.selectedIndex}`);
+    localStorage.setItem('cursorSelect', cursorSelect.value);
+    localStorage.setItem('cursorSelectIndex', cursorSelect.options.selectedIndex)
     if (cursorEffect) {
+        console.log('cursor effect exists, destroying');
         cursorEffect.destroy();
+        console.log('setting cursor effect');
         setCursorEffect(cursorSelect.value)
-        console.log(`cursor: ${cursorSelect.value} at index ${cursorSelect.options.selectedIndex}`);
-        localStorage.setItem('cursorSelect', cursorSelect.value);
-        localStorage.setItem('cursorSelectIndex', cursorSelect.options.selectedIndex)
+    } else {
+        console.log('no cursor effect');
     }
 });
 
