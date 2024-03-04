@@ -25,12 +25,14 @@ const { category } = Astro.params;
 const { posts } = Astro.props;
 ---
 <BaseLayout pageTitle={category}>
-  <p>Posts categorized under {category}</p>
-  <ul>
-    {
-      posts.map((post) => (
-        <BlogPost url={"/jgoodman-website/blog/" + post.slug} title={post.data.title} />
-      ))
-    }
-  </ul>
+  <article data-pagefind-body>
+    <p>Posts categorized under {category}</p>
+    <ul>
+      {
+        posts.map((post) => (
+          <BlogPost url={"/jgoodman-website/blog/" + post.slug} title={post.data.title} />
+        ))
+      }
+    </ul>
+  </article>
 </BaseLayout>
