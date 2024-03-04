@@ -18,26 +18,34 @@ const bgSelect = document.querySelector('#bg-select');
 window.addEventListener("load", (event) => {
     // check for previous cursor selection
     if (localStorage.getItem('cursorSelect')) {
+        console.log('cursor in local storage');
         setCursorEffect(localStorage.getItem('cursorSelect'));
+        console.log(`cursor set to ${localStorage.getItem('cursorSelect')}`);
     } else {
         setCursorEffect(cursorSelect.options[0].value)
+        console.log(`cursor set to default: ${cursorSelect.options[0].value}`)
     }
 
     if (localStorage.getItem('cursorSelectIndex')) {
-        cursorSelect.options[localStorage.getItem('cursorSelectIndex')].selected = true;
+        cursorSelect.options[Number(localStorage.getItem('cursorSelectIndex'))].selected = true;
+        console.log(Number(localStorage.getItem('cursorSelectIndex')));
     } else {
         cursorSelect.options[0].selected = true;
     }
 
     // check for previous background image selection
     if (localStorage.getItem('bgSelect')) {
+        console.log('bg in local storage');
         setBgImage(localStorage.getItem('bgSelect'));
+        console.log(`bg set to ${localStorage.getItem('bgSelect')}`);
     } else {
         setBgImage(bgSelect.options[0].value)
+        console.log(`bg set to default: ${bgSelect.options[0].value}`)
     }
 
     if (localStorage.getItem('bgSelectIndex')) {
-        bgSelect.options[localStorage.getItem('bgSelectIndex')].selected = true;
+        bgSelect.options[Number(localStorage.getItem('bgSelectIndex'))].selected = true;
+        console.log(Number(localStorage.getItem('bgSelectIndex')));
     } else {
         bgSelect.options[0].selected = true;
     }
@@ -111,6 +119,7 @@ cursorSelect.addEventListener('change', () => {
     if (cursorEffect) {
         cursorEffect.destroy();
         setCursorEffect(cursorSelect.value)
+        console.log(`cursor: ${cursorSelect.value} at index ${cursorSelect.options.selectedIndex}`);
         localStorage.setItem('cursorSelect', cursorSelect.value);
         localStorage.setItem('cursorSelectIndex', cursorSelect.options.selectedIndex)
     }
@@ -118,6 +127,7 @@ cursorSelect.addEventListener('change', () => {
 
 bgSelect.addEventListener('change', () => {
     setBgImage(bgSelect.value);
+    console.log(`bg: ${bgSelect.value} at index ${bgSelect.options.selectedIndex}`);
     localStorage.setItem('bgSelect', bgSelect.value);
     localStorage.setItem('bgSelectIndex', bgSelect.options.selectedIndex);
 });
