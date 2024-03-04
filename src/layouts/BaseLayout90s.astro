@@ -1,0 +1,97 @@
+---
+import Header90s from "../components/Header90s.astro";
+import Footer90s from "../components/Footer90s.astro";
+import '../styles/more-modern-reset.css';
+import '../styles/global.css';
+// import '../styles/pagefind-custom.css';
+
+
+const { pageTitle } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/jgoodman-website/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>J. Goodman | {pageTitle}</title>
+	</head>
+
+	<body>
+
+    <Header90s />
+    
+    <hr>
+
+    <main>
+      <h1>{pageTitle}</h1>
+      <slot />
+    </main>
+
+    <hr>
+
+		<Footer90s />
+
+	</body>
+  
+  <script src="../scripts/script.js"></script>
+
+</html>
+
+<style is:global>
+  nav {
+    display: grid;
+    place-items: center;
+  }
+
+  .pagefind-ui {
+    --pagefind-ui-scale: 0.75;
+    --pagefind-ui-primary: navy;
+    --pagefind-ui-text: black;
+    /* --pagefind-ui-border: slategrey; */
+    --pagefind-ui-border: black;
+    --pagefind-ui-border-width: 2px;
+    /* --pagefind-ui-border-radius: 0.25rem; */
+    --pagefind-ui-border-radius: none;
+    /* --pagefind-ui-font: sans-serif; */
+    --pagefind-ui-font: serif;
+
+    width: 50%;
+  }
+
+  .pagefind-ui.yellow {
+    --pagefind-ui-background: lightyellow;
+  }
+
+  .pagefind-ui.red {
+    --pagefind-ui-background: peachpuff;
+    width: 100%;
+  }
+
+  .pagefind-ui .pagefind-ui__drawer:not(.pagefind-ui__hidden) {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-top: 0px;
+    z-index: 9999;
+    padding: 0 2em 1em;
+    overflow-y: auto;
+    box-shadow:
+      0 10px 10px -5px rgba(0, 0, 0, 0.2),
+      0 2px 2px 0 rgba(0, 0, 0, 0.1);
+    border-bottom-right-radius: var(--pagefind-ui-border-radius);
+    border-bottom-left-radius: var(--pagefind-ui-border-radius);
+    background-color: var(--pagefind-ui-background);
+  }
+
+  .pagefind-ui .pagefind-ui__result-link {
+    color: var(--pagefind-ui-primary);
+  }
+
+  .pagefind-ui .pagefind-ui__result-excerpt {
+    color: var(--pagefind-ui-text);
+  }
+</style>

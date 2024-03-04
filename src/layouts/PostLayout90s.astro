@@ -1,0 +1,11 @@
+---
+import BaseLayout90s from "./BaseLayout90s.astro";
+const { frontmatter } = Astro.props;
+---
+<BaseLayout90s pageTitle={frontmatter.title}>
+  <article class="blog-post">
+  <p>{frontmatter.publishDate.toString().slice(0,10)}</p>
+  <p><em>{frontmatter.description}</em></p>
+    <slot />
+  </article>
+</BaseLayout90s>

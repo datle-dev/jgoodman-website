@@ -1,0 +1,9 @@
+---
+import BaseLayout90s from "./BaseLayout90s.astro";
+const { frontmatter } = Astro.props;
+---
+<BaseLayout90s pageTitle={frontmatter.title}>
+  <article>
+    <slot />
+  </article>
+</BaseLayout90s>
