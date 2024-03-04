@@ -10,7 +10,7 @@ import {
     snowflakeCursor,
 } from "cursor-effects";
 
-let cursorEffect;
+var cursorEffect;
 const body = document.querySelector('body');
 const cursorSelect = document.querySelector('#cursor-select');
 const bgSelect = document.querySelector('#bg-select');
@@ -120,12 +120,21 @@ cursorSelect.addEventListener('change', () => {
     localStorage.setItem('cursorSelect', cursorSelect.value);
     localStorage.setItem('cursorSelectIndex', cursorSelect.options.selectedIndex)
     if (cursorEffect) {
-        console.log('cursor effect exists, destroying');
+        console.log(cursorEffect);
+        // console.log('cursor effect exists, destroying');
         cursorEffect.destroy();
+        // let cursorEffect;
+        console.log(cursorEffect);
         console.log('setting cursor effect');
         setCursorEffect(cursorSelect.value)
+        console.log(cursorEffect);
     } else {
         console.log('no cursor effect');
+        // let cursorEffect;
+        // console.log('cursoreffect created')
+        // setCursorEffect(cursorSelect.value)
+        // console.log(cursorEffect);
+
     }
 });
 
