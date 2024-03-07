@@ -3,7 +3,7 @@
 This is the repo for the `jgoodman-website` website built with [Astro](https://astro.build/).
 This repo is available under the MIT license.
 
-## Handy Links
+### Handy Links
 
 - [Astro docs](https://docs.astro.build/en/getting-started/)
 - [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site)
@@ -13,7 +13,7 @@ This repo is available under the MIT license.
 - [Markdown basic syntax](https://www.markdownguide.org/basic-syntax/)
 - [Markdown cheat sheet](https://www.markdownguide.org/cheat-sheet/)
 
-## Website Features
+### Website Features
 
 - [90s Cursor Effects](https://github.com/tholman/cursor-effects)
 - Search via [Pagefind](https://pagefind.app/), implemented with [shishkin/astro-pagefind](https://github.com/shishkin/astro-pagefind)
@@ -26,6 +26,22 @@ When
 [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site)
 is configured for the repo, a website will be created at "https://*username*.github.io."
 Astro provides [instructions for deploying the site to GitHub pages](https://docs.astro.build/en/guides/deploy/github/).
+
+You can review [limits on the use of GitHub](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#limits-on-use-of-github-pages) as well.
+
+## Repo Ownership
+
+Currently, the website is a public repo under `datle-dev`.
+There's a few different options for making it yours:
+
+- [Create a fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo) of the repo
+  - Creates a copy of the original with a connection to that "upstream" original
+  - Usually for making changes, then proposing the changes back upstream
+  - If you're keen on sticking with a template, this would let you benefit from fetching upstream changes if it was actively maintained, and you would serve your own version (perhaps via a separate branch) of the website
+- [Transfer ownership](https://docs.github.com/en/repositories/creating-and-managing-repositories/transferring-a-repository) of the repo
+  - The original owner `datle-dev` would be added as a contributor in the new one, so I can continue to help update and maintain the site's code
+
+**I recommend we transfer ownership.**
 
 ## Installation
 
@@ -144,9 +160,8 @@ Consider [making changes in a branch](https://docs.github.com/en/desktop/making-
 - `index.astro` is required in `src/pages` for the home page to be rendered correctly
   - For pages besides `index.astro`, there are other [supported page files](https://docs.astro.build/en/basics/astro-pages/) too
 
-`src/pages/`
-- all the main pages of your website
-- `/blog/`, `/category/`, and `/tags/` are all automatically set up to build pages based on whatever's in `src/content/blog/`
+`src/pages/` is where all the main pages of your website live.
+`/blog/`, `/category/`, and `/tags/` are all automatically set up to build pages based on whatever's in `src/content/blog/`—this is the dynamic page routing touted by Astro.
 
 ### Blog Content
 `src/content/blog/`
