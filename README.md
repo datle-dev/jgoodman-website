@@ -5,13 +5,13 @@ This repo is available under the MIT license.
 
 ## Handy Links
 
-[Astro docs](https://docs.astro.build/en/getting-started/)
-[GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site)
-[Deploying Astro site to GitHub Pages](https://docs.astro.build/en/guides/deploy/github/).
-[Git](https://git-scm.com/book/en/v2/)
-[GitHub Desktop docs](https://docs.github.com/en/desktop)
-[Markdown basic syntax](https://www.markdownguide.org/basic-syntax/)
-[Markdown cheat sheet](https://www.markdownguide.org/cheat-sheet/)
+- [Astro docs](https://docs.astro.build/en/getting-started/)
+- [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site)
+- [Deploying Astro site to GitHub Pages](https://docs.astro.build/en/guides/deploy/github/).
+- [Git](https://git-scm.com/book/en/v2/)
+- [GitHub Desktop docs](https://docs.github.com/en/desktop)
+- [Markdown basic syntax](https://www.markdownguide.org/basic-syntax/)
+- [Markdown cheat sheet](https://www.markdownguide.org/cheat-sheet/)
 
 ## Website Features
 
