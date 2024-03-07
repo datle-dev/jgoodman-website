@@ -38,10 +38,31 @@ There's a few different options for making it yours:
   - Creates a copy of the original with a connection to that "upstream" original
   - Usually for making changes, then proposing the changes back upstream
   - If you're keen on sticking with a template, this would let you benefit from fetching upstream changes if it was actively maintained, and you would serve your own version (perhaps via a separate branch) of the website
+- [Make the repo on `datle-dev` a template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-template-repository) from which you can create a new repo
+  - This is the "boilerplate" option
+  - Unfortunately the files would be copied as-is and you wouldn't be able to fetch updates like you could with a fork
 - [Transfer ownership](https://docs.github.com/en/repositories/creating-and-managing-repositories/transferring-a-repository) of the repo
   - The original owner `datle-dev` would be added as a contributor in the new one, so I can continue to help update and maintain the site's code
 
 **I recommend we transfer ownership.**
+
+### Some Notes on the Fork Option
+
+In the past, I've forked other Astro templates, then created a new branch (perhaps called `personal-blog` or similar) where all my custom content would go.
+The `main` branch of my fork is what I'd keep synced with the upstream, reviewing changes as needed.
+I'd then merge those changes into my `personal-blog` branch.
+The `personal-blog` branch is where I would then choose to have GitHub Pages build and deploy the site from.
+Some might prefer to just do everything in the one `main` branch of their fork, but I liked the separation.
+
+The steps involved with this include:
+- Adding the upstream repo that you forked from as a remote if it isn't already: `git remote add upstream https://github.com/user/repo.git`
+- When there are changes you want to update your forked repo with, fetch them: In the `main` branch of your fork, `git fetch upstream`, then `git merge upstream/main`
+- Pushing these changes to the `main` branch of your fork: `git push`
+- Switching to your branch, e.g. `personal-blog`: `git switch personal-blog`
+- Merge the changes from your fork's newly synced `main` branch: `git merge main`
+- Review the changes, then push to the origin (the `personal-blog` branch of your forked repo): `git push`
+
+Possibly more tedious, but an option to consider.
 
 ## Installation
 
