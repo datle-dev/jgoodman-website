@@ -137,6 +137,8 @@ Here's more info about [Astro project structure](https://docs.astro.build/en/bas
 
 ## Customizing the Website
 
+Consider [making changes in a branch](https://docs.github.com/en/desktop/making-changes-in-a-branch) and merging those changes into the `main` branch when ready.
+
 ### Main Pages
 
 - `index.astro` is required in `src/pages` for the home page to be rendered correctly
