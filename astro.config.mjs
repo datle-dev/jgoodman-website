@@ -7,6 +7,6 @@ import solidJs from "@astrojs/solid-js"
 // https://astro.build/config
 export default defineConfig({
   site: 'https://datle-dev.github.io',
-  base: '/jgoodman-website',
+  base: 'jgoodman-website',
   integrations: [mdx(), sitemap(), solidJs(), tailwind({ applyBaseStyles: false })],
 })
