@@ -41,23 +41,23 @@ export const GALLERY: Page = {
 export const LINKS: Links = [
   { 
     TEXT: "Home", 
-    HREF: "/", 
+    HREF: "/jgoodman-website/", 
   },
   { 
     TEXT: "Work", 
-    HREF: "/work", 
+    HREF: "/jgoodman-website/work", 
   },
   { 
     TEXT: "Blog", 
-    HREF: "/blog", 
+    HREF: "/jgoodman-website/blog", 
   },
   { 
     TEXT: "Projects", 
-    HREF: "/projects", 
+    HREF: "/jgoodman-website/projects", 
   },
   {
     TEXT: "Gallery",
-    HREF: "/gallery",
+    HREF: "/jgoodman-website/gallery",
   },
 ]
 

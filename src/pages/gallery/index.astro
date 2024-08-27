@@ -18,7 +18,7 @@ const albums = await getCollection("albums");
   <BottomLayout>
     <div class="animate columns-2 gap-4 min-w-80">
       {albums.map((album) => (
-        <a href={`/gallery/${album.id}`} class="animate group relative block rounded bg-black">
+        <a href={`/jgoodman-website/gallery/${album.id}`} class="animate group relative block rounded bg-black">
           <Image
             src={album.data.cover}
             alt={album.data.title}
